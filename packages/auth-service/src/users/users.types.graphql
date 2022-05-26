@@ -1,0 +1,42 @@
+scalar Date
+
+type Query {
+  users: [User!]!
+  user(id: ID!): User!
+  forgotPassword(email: String): Boolean
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput): User!
+  updateUser(fieldsToUpdate: UpdateUserInput!, username: String): User!
+  addAdminPermission(username: String!): User!
+  removeAdminPermission(username: String!): User!
+  resetPassword(username: String!, code: String!, password: String!): User!
+}
+
+type User @key (fields: "id"){
+  id: ID!
+  username: String!
+  email: String!
+  permissions: [String!]!
+  created_at: Date!
+  updated_at: Date!
+}
+
+input CreateUserInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  username: String
+  email: String
+  password: UpdatePasswordInput
+  enabled: Boolean
+}
+
+input UpdatePasswordInput {
+  oldPassword: String!
+  newPassword: String!
+}

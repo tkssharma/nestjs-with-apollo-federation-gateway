@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+  postgres-auth:
+    image: postgres:12-alpine
+    restart: unless-stopped
+  postgres-home-manager:
+    image: postgres:12-alpine
+    restart: unless-stopped
+  postgres-booking-manager:
+    image: postgres:12-alpine
+    restart: unless-stopped

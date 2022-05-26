@@ -1,0 +1,36 @@
+version: "3"
+services:
+  postgres-auth:
+    environment:
+      - POSTGRES_USER=api
+      - POSTGRES_PASSWORD=development_pass
+      - POSTGRES_MULTIPLE_DATABASES="auth-api","auth-api-testing"
+    volumes:
+      - ./docker-utils:/docker-entrypoint-initdb.d
+      - auth_api_data:/data/postgres
+    ports:
+      - 5431:5432
+  postgres-home-manager:
+    environment:
+      - POSTGRES_USER=api
+      - POSTGRES_PASSWORD=development_pass
+      - POSTGRES_MULTIPLE_DATABASES="home-manager-api","home-manager-api-testing"
+    volumes:
+      - ./docker-utils:/docker-entrypoint-initdb.d
+      - home_manager_api_data:/data/postgres
+    ports:
+      - 5433:5432
+  postgres-booking-manager:
+    environment:
+      - POSTGRES_USER=api
+      - POSTGRES_PASSWORD=development_pass
+      - POSTGRES_MULTIPLE_DATABASES="booking-manager-api","booking-manager-api-testing"
+    volumes:
+      - ./docker-utils:/docker-entrypoint-initdb.d
+      - booking_manager_api_data:/data/postgres
+    ports:
+      - 5434:5432
+volumes:
+  auth_api_data: {}
+  home_manager_api_data: {}
+  booking_manager_api_data: {}

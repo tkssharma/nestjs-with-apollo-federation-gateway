@@ -1,0 +1,17 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "hoist": false,
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com/mobileleaplabs"
+    },
+    "version": {
+      "createRelease": "github",
+      "conventionalCommits": true,
+      "allowBranch": ["master", "develop"],
+      "message": "chore(release): publish [skip ci]",
+      "ignore": ["**/*.md", "**/package-lock.json"]
+    }
+  }
+}

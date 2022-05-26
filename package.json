@@ -1,0 +1,51 @@
+{
+  "name": "mobileleaplabs",
+  "version": "0.0.0",
+  "description": "Monorepo that holds all services",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna exec npm i",
+    "bootstrap:ci": "lerna exec npm ci -- --ignore-scripts",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "lint": "node node_modules/.bin/prettier --check \"**/*.{js,json,ts,yml,yaml}\"",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "prettier": "node node_modules/.bin/prettier --check \"**/*.{js,json,ts,yml,yaml}\"",
+    "prettier:write": "node node_modules/.bin/prettier --write \"**/*.{js,json,ts,yml,yaml}\"",
+    "release": "lerna publish --loglevel 5",
+    "release:ci": "lerna publish from-git --loglevel 5 --yes"
+  },
+  "keywords": [],
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/MobileLeapLabs/atlas-fractional/issues"
+  },
+  "homepage": "https://github.com/MobileLeapLabs/atlas-fractional.git#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.6.0",
+    "fbjs-scripts": "^3.0.1",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "lerna": "^4.0.0",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# Custom
+/packages/*/build/**
+/packages/*/coverage/**
+/node_modules/**
+package-lock.json
+**/build/
+**/dist/
+./package.json
+tmp
