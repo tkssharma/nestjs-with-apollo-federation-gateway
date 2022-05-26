@@ -37,3 +37,19 @@ With schema stitching, you must define the “stitching” in the gateway yourse
 
 
 In this whole demo we will talk about nestjs with apollo federation gateway, how gateway is composing all sub-graphs and making out task easy to compose all sub-graphs and expose only a single graohql end point, we don't need to do stitching with apollo federation 
+
+### Nestjs with Graphql
+
+Nest offers two ways of building GraphQL applications, the code first and the schema first methods. You should choose the one that works best for you. Most of the chapters in this GraphQL section are divided into two main parts: one you should follow if you adopt code first, and the other to be used if you adopt schema first.
+
+- schema first approach
+- code first approach
+
+example you can explore from here 
+https://github.com/tkssharma/nodejs-graphql-world/tree/master/Graphql%20using%20Apollo
+
+
+In the code first approach, you use decorators and TypeScript classes to generate the corresponding GraphQL schema. This approach is useful if you prefer to work exclusively with TypeScript and avoid context switching between language syntaxes.
+
+
+
