@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@auth/*": ["src/app/auth/*"],
+      "@blob/*": ["src/app/blob/*"],
+      "@domain/*": ["src/app/domain/*"],
+      "@core/*": ["src/app/core/*"],
+      "@config/*": ["src/config/*"],
+      "@db/*": ["src/db/*"],
+      "@kafka/*": ["src/kafka/*"],
+      "@logger/*": ["src/logger/*"],
+      "@test/*": ["test/*"]
+    }
+  },
+  "exclude": ["node_modules", "build", "graphql.schama.ts"]
+}

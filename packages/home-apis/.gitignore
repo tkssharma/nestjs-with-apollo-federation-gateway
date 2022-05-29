@@ -1,0 +1,21 @@
+# Node.js
+node_modules
+npm-debug.log
+dist
+.DS_Store
+# Tests
+.vscode
+coverage
+.nyc_output
+.nycrc
+# Docker
+docker-compose.override.yml
+.env
+dist/*
+dist
+
+# IDEs
+.vscode/*
+
+# Misc
+.gitkeep

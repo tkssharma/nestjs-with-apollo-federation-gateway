@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@auth/*": ["src/app/auth/*"],
+      "@blob/*": ["src/app/blob/*"],
+      "@domain/*": ["src/app/domain/*"],
+      "@core/*": ["src/app/core/*"],
+      "@config/*": ["src/config/*"],
+      "@db/*": ["src/db/*"],
+      "@logger/*": ["src/logger/*"],
+      "@test/*": ["test/*"]
+    }
+  },
+  "exclude": ["node_modules", "build", "graphql.schama.ts"]
+}

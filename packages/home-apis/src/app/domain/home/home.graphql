@@ -1,0 +1,35 @@
+scalar Date
+scalar Upload
+
+type Home @key (fields: "id"){
+    id: ID!
+    name: String!
+    user: User
+    description: String!
+    display_images: [String!]
+    original_images: [String!]
+    is_active: Boolean!
+    created_at: Date
+    updated_at: Date
+}
+
+extend type User @key(fields: "id") {
+  id: ID! @external
+}
+
+type Query {
+    homes: [Home!]
+    home(id: ID): Home!
+    findHomes(name: String!): [Home!]
+    activeHomes: [Home!]
+}
+input HomeInput {
+  name: String!
+  description: String!
+  is_active: Boolean!
+}
+
+type Mutation {
+    createHome(payload: HomeInput!): Home
+    updateHome(id: ID!, payload: HomeInput!): Home
+}
